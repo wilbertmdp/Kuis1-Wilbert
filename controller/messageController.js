@@ -39,8 +39,8 @@ export const createMessage = async (req, res) => {
 
 export const updateMessage = async (req, res) => {
     try {
-        const { id } = req.params
-        const { message } = req.body
+        const id = req.params
+        const message = req.body
 
         const response = await messageModel.findByIdAndUpdate(id,{ message },{ new: true })
 
@@ -66,7 +66,7 @@ export const updateMessage = async (req, res) => {
 
 export const deleteMessage = async (req, res) => {
     try {
-        const { id } = req.params
+        const id = req.params
 
         const response = await messageModel.findByIdAndDelete(id)
 
